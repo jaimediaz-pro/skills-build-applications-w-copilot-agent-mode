@@ -1,0 +1,6 @@
+import mongoose from 'mongoose'
+
+export async function connectDatabase(): Promise<void> {
+  const mongoUrl = process.env.MONGODB_URL ?? 'mongodb://127.0.0.1:27017/octofit_db'
+  await mongoose.connect(mongoUrl)
+}
